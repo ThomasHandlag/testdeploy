@@ -8,13 +8,6 @@ npm install
 echo "Running build"
 npm run build
 
-echo "Check pgsql connection"
-until pg_isready -h $DB_HOST -p $DB_PORT -U $DB_USERNAME
-do
-  echo "Waiting for postgres..."
-  sleep 2
-done
-
 echo "Clearing cache..."
 php artisan config:clear
 
