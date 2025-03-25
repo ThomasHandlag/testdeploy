@@ -2,8 +2,7 @@ FROM richarvey/nginx-php-fpm:3.1.6
 
 USER root
 RUN apk update && \
-    apk add --no-cache curl nodejs-current npm && \
-    npm install -g npm@latest
+    apk add --no-cache curl nodejs-current npm
 COPY . .
 
 # Image config
