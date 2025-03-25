@@ -1,5 +1,10 @@
 FROM richarvey/nginx-php-fpm:3.1.6
 
+USER root
+RUN apk update && \
+    apk add --no-cache curl nodejs npm && \
+    npm install -g npm@latest
+    
 COPY . .
 
 # Image config
